@@ -1,0 +1,55 @@
+<label class="label-cs">Hvilken type virksomhed?</label>
+[radio hvilken-type class:radio-btns use_label_element "B2B" "B2C"]
+
+[cf7mls_step navigation-btns "Next"]
+
+
+<label class="label-cs">Hvad sælger I?</label>
+[radio hvad-salger class:radio-btns use_label_element "Produkter" "Services"]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Hvilke markedsføringskanaler benytter I Jer af i dag?</label>
+[checkbox benytter class:checkbox-btns use_label_element "Facebook/Instagram" "Google" "SEO" "E-Mail" "Linkedin" "Radio" "Avis" "Ingen" ]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Hvad er de største ønsker for at skalere forretningen?</label>
+[checkbox markeds class:checkbox-btns use_label_element "Højere ROAS (Return on Ad Spend)" "Mere trafik" "flere leads" "større ordrestørrelse" "mersalg til eksisterende kunder/klienter" "varmere leads" "højere konverteringsrate" "alle ovenover" ]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Hvad er din månedlig omsætning lige nu</label>
+[radio lige-nu class:radio-btns use_label_element "10-30.000" "30-80.000" "80-150.000" "150-400.000" "400-900.000" "900.000+" ]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Hvad er din ønskede månedlige omsætning?</label>
+[radio hvad-er class:radio-btns use_label_element "80-150.000" "150-400.000" "400-900.000" "1Mio-2Mio" "2Mio-5Mio" "5Mio+" ]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Hvad er Jeres månedlige markedsføringsbudget på lige nu?</label>
+[radio manedlige class:radio-btns use_label_element "0-5.000" "5.000-10.000" "10.000-50.000" "50.000-100.000" "100.000+"]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Kontaktinformation</label>
+<div class="contact-info">
+<p> Udfyld kontaktformularen - og bliv kontaktet inden 7 dage.</p>
+
+[text* first-name placeholder "Fornavn"]
+[text* last-name placeholder "Efternavn"]
+[email* email-address placeholder "Email"]
+[tel* phone-number placeholder "Telefonnummer"]
+[text* virksomhedsnavn placeholder "Virksomhedsnavn"]
+[text* hjemmesidelink placeholder "Hjemmesidelink"]
+</div>
+
+[submit "Submit"]

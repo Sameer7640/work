@@ -1,0 +1,261 @@
+.multistep .fieldset-cf7mls-wrapper fieldset {
+  border: none;
+}
+.multistep .fieldset-cf7mls-wrapper fieldset .wpcf7-form-control-wrap {
+    text-align: center;
+}
+.multistep .wpcf7-form-control {
+    display: block;
+}
+.cf7mls_progress_bar {
+  margin: 40px auto;
+  max-width: 1000px;
+}
+.cf7mls_progress_bar li::before {
+    width: 32px;
+  height: 32px;
+  box-shadow: 3px 6px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 0px 0px 2px #ed8700;
+  border: 15px solid white;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ed8700!important;
+  background-color: #ffffff;
+  border-radius: 50%;
+  background: #fff!important;
+}
+.cf7mls_progress_bar li.active + li::after {
+  border: 1px dashed #ed8700;
+  background: none;
+  top: 25px;
+}
+.cf7mls_progress_bar li::after {
+  top: 35%!important;
+}
+.cf7mls_progress_bar li.active {
+  color: #ed8700!important;
+  font-size: 14px;
+  text-transform: none;
+}
+.cf7mls_progress_bar li.active ~ li {
+  color: #b9c0ce;
+  font-size: 14px;
+  text-transform: none;
+}
+.cf7mls_progress_bar li.active ~ li::before {
+  box-shadow: inset 0px 0px 0px 2px #b9c0ce;
+  color: #b9c0ce!important;;
+}
+.cf7mls_progress_bar li.active ~ li.active::before{
+  box-shadow: inset 0px 0px 0px 2px #ed8700!important;
+  color: #ed8700!important;
+}
+.typeofproperty {
+    display: grid!important;
+    grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
+    grid-gap: 10px;
+}
+.typeofproperty label {
+    background: #0DA9F1;
+    min-width: 150px;
+    min-height: 150px;
+    border-radius: 15px;
+    padding: 5px;
+    display: block;
+    position: relative;
+}
+.typeofproperty label:hover {
+    background-color: #04a1dd!important;
+    cursor: pointer;
+}
+.typeofproperty label input {
+    opacity: 0;
+}
+.typeofproperty label span {
+    letter-spacing: 0.32px;
+      text-align: center;
+      color: #ffffff;
+      font-size: 16px;
+      margin: 15px 0 30px;
+      display: block;
+}
+.typeofproperty label span::before {
+    content: '';
+    width: 50%;
+    height: 70px;
+    display: block;
+    margin: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 10px auto;
+}
+.typeofproperty label span::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transitionL 0.3s ease-in-out;
+}
+.typeofproperty label input:checked + span::after {
+    background: #fff url(https://hyperinventive.website/websites/solidoffers/wp-content/uploads/2020/09/Group-65463.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Image for Single Family (Type of Home)*/
+.typeofproperty span:nth-child(1) label span::before {background-image: url(https://hyperinventive.website/websites/solidoffers/wp-content/uploads/2020/09/Group-65156.svg);}
+/* Image for Townhouse (Type of Home)*/
+.typeofproperty span:nth-child(2) label span::before {background-image: url(https://hyperinventive.website/websites/solidoffers/wp-content/uploads/2020/09/Group-65159.svg);}
+/* Image for Condominium (Type of Home)*/
+.typeofproperty span:nth-child(3) label span::before {background-image: url(https://hyperinventive.website/websites/solidoffers/wp-content/uploads/2020/09/Group-65167.svg);}
+/* Image for Mobile Home (Type of Home)*/
+.typeofproperty span:nth-child(4) label span::before {background-image: url(https://hyperinventive.website/websites/solidoffers/wp-content/uploads/2020/09/Group-65169.svg);}
+/* Image for Vacant Lot (Type of Home)*/
+.typeofproperty span:nth-child(5) label span::before {background-image: url(https://hyperinventive.website/websites/solidoffers/wp-content/uploads/2020/09/Group-65171.svg);}
+
+
+/*=========Step2-CSS========*/
+
+.listed span.wpcf7-list-item {
+    display: block;
+}
+.listed label {
+    display: block;
+    background-color: #00adef;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 8px;
+}
+.listed label span {
+    color: white;
+    font-size: 16px;
+}
+.listed label input {
+    position: absolute;
+    opacity: 0;
+}
+.listed label:hover {
+    background-color: #04a1dd!important;
+    cursor: pointer;
+}
+
+/*=========Step3-CSS========*/
+
+.timeframe span.wpcf7-list-item {
+    display: block;
+}
+.timeframe label {
+    display: block;
+    background-color: #00adef;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 8px;
+}
+.timeframe label span {
+    color: white;
+    font-size: 16px;
+}
+.timeframe label input {
+    position: absolute;
+    opacity: 0;
+}
+.timeframe label:hover {
+    background-color: #04a1dd!important;
+    cursor: pointer;
+}
+
+
+/*=========Step4-CSS========*/
+
+.value span.wpcf7-list-item {
+    display: block;
+}
+.value label {
+    display: block;
+    background-color: #00adef;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 8px;
+}
+.value label span {
+    color: white;
+    font-size: 16px;
+}
+.value label input {
+    position: absolute;
+    opacity: 0;
+}
+.value label:hover {
+    background-color: #04a1dd!important;
+    cursor: pointer;
+}
+
+/*=========Step5-CSS========*/
+
+.contact-details input {
+    background-color: #f6f7f8;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: solid 1px #e4e9f3;
+    min-height: 50px;
+}
+.contact-details input:focus {
+    box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #00adef;
+}
+.contact-details input::placeholder {
+    color: #b9c0ce;
+}
+
+/*=========SOME-GENERAL-CSS========*/
+.fieldset-cf7mls-wrapper fieldset:not(:first-child) {
+    max-width: 1000px;
+    margin: auto;
+}
+h2.heading-form {
+    font-size: 32px;
+    font-weight: 600;
+    color: #394458;
+    margin: 50px 0;
+    text-align: center; 
+}
+button.cf7mls_back.action-button {
+    background: none;
+    color: #abb3c0;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: none;
+}
+button.cf7mls_back.action-button:hover {
+    box-shadow: none;
+}
+button.cf7mls_back.action-button::before {
+    content: '';
+    background-image: url(https://hyperinventive.website/websites/solidoffers/wp-content/uploads/2020/09/Back_Arrow.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 10px;
+    margin-right: 5px; 
+}
+.type-of-home ~ button {
+    display: none!important;
+}
+
+/* Errors CSS */
+span.wpcf7-not-valid-tip {
+    text-align: left;
+}

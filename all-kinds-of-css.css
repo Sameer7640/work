@@ -1,0 +1,21 @@
+/*
+
+TYPOGRAPHY -->  (Text stroke)
+
+*/
+
+h1.entry-title {
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 6px;
+    -webkit-text-stroke-color: black;
+    font-weight: 900!important;
+    font-family: 'Raleway'!important;
+    text-transform: uppercase;
+    font-size: 80px!important;
+}
+@media screen and (max-width:768px) {
+    h1.entry-title {
+        font-size: 45px!important;
+        -webkit-text-stroke-width: 3px;
+    }
+}

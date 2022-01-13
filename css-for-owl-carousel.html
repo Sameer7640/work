@@ -1,0 +1,126 @@
+.owl-nav {
+  position: absolute;
+  top: 50%;
+  transform: translate(0px, -50%);
+  width: 100%;
+}
+
+button.owl-prev {
+  position: absolute;
+  left: -50px;
+}
+
+button.owl-next {
+  right: -50px;
+  position: absolute;
+}
+
+.owl-nav button span {
+  font-size: 40px;
+}
+
+.owl-dots {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  background: #1a5ba9;
+  display: block;
+  border-radius: 10px;
+  margin: 5px;
+  position: relative;
+  opacity: 0.3;
+  transition: 0.3s ease-in-out;
+}
+
+.owl-dots .owl-dot.active span {
+  opacity: 1;
+  margin: 5px 10px;
+}
+
+.owl-dots .owl-dot span::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #1a5ba9;
+  border-radius: 20px;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.owl-dots .owl-dot.active span::after {
+  opacity: 1;
+}
+
+.owl-nav {
+  position: absolute;
+  top: 50%;
+  transform: translate(0px, -50%);
+  width: 100%;
+}
+
+button.owl-prev {
+  position: absolute;
+  left: -50px;
+}
+
+button.owl-next {
+  right: -50px;
+  position: absolute;
+}
+
+.owl-nav button span {
+  font-size: 40px;
+}
+
+.owl-dots {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  background: #000;
+  display: block;
+  border-radius: 10px;
+  margin: 5px;
+  position: relative;
+  opacity: 0.3;
+  transition: 0.3s ease-in-out;
+}
+
+.owl-dots .owl-dot.active span {
+  opacity: 1;
+  margin: 5px 10px;
+}
+
+.owl-dots .owl-dot span::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #000;
+  border-radius: 20px;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.owl-dots .owl-dot.active span::after {
+  opacity: 1;
+}
+
+button:focus {
+  outline: 0px dotted !important;
+  outline: 0px auto -webkit-focus-ring-color !important;
+}

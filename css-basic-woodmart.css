@@ -1,0 +1,28 @@
+/* GLOBAL CSS STARTS HERE */
+.site-content {
+	margin-bottom: 0px;
+}
+.woodmart-prefooter {
+	padding-bottom: 0px;
+}
+.btn-primary {
+	padding: 15px 40px;
+	text-transform: none;
+	font-weight: 400;
+	font-size: 16px;
+}
+.color-scheme-dark {
+	color: #333;
+}
+.color-scheme-light {
+	color: #fff;
+}
+.woodmart-navigation .menu-item a {
+	color: #333;
+	text-transform: none;
+}
+.woodmart-navigation .menu-item.current-menu-item a {
+	color: #6B7A99;
+	font-weight: 700;
+	text-transform: uppercase;
+}
