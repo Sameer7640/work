@@ -1,0 +1,88 @@
+<style type="text/css">
+#multistep_form fieldset:not(:first-of-type) {display: none;}
+</style>
+<form class="lead-quote-form" action="/action_page.php" id="multistep_form">
+	<fieldset id="account">
+		<div class="panel-body"><h4>Step 1: Create your account</h4><br>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="email">Email:</label>
+				<div class="col-sm-5">
+					<input type="email" class="form-control" id="email" name="email">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="pwd">Password:</label>
+				<div class="col-sm-5">
+					<input type="password" class="form-control" id="pwd" name="pwd">
+				</div>
+			</div>
+
+			<input type="button" name="password" class="next btn btn-info" value="Next" id="next1" style='margin-left:30%'/>
+		</div>
+	</fieldset>
+
+	<fieldset id="personal">
+		<div class="panel-body"><h4>Step 2: Personnel Details</h4><br>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="fname">First Name:</label>
+				<div class="col-sm-5">
+					<input type="text" class="form-control" id="fname" name="fname">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="lname">Last Name:</label>
+				<div class="col-sm-5">
+					<input type="text" class="form-control" id="lname" name="lname">
+				</div>
+			</div>
+
+			<input type="button" name="previous" class="previous btn btn-warning" value="Previous" id="previous1" style='margin-left:30%'/>
+			<input type="button" name="next" class="next btn btn-info" value="Next" id="next2" style='margin-left:30%'/>
+		</div>
+	</fieldset>
+
+	<fieldset id="contact">
+		<div class="panel-body"><h4>Step 3: Contact Details</h4><br>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="mobno">Mobile Number:</label>
+				<div class="col-sm-5">
+					<input type="text" class="form-control" id="mobno" name="mobno">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="address">Address:</label>
+				<div class="col-sm-5">
+					<textarea  class="form-control" name="address" id="address"></textarea>
+				</div>
+			</div>
+			<input type="button" name="previous" class="previous btn btn-warning" value="Previous" id="previous2" style='margin-left:30%'/>
+			<input type="submit" name="submit" class="submit btn btn-success" value="Submit" id="next3" style='margin-left:30%'/>
+		</div>
+	</fieldset>
+
+</form>
+<script>
+jQuery(document).ready(function(){  
+  var form_count = 1, form_count_form, next_form, total_forms;
+  total_forms = jQuery("fieldset").length;  
+  jQuery(".next").click(function(){
+
+		let previous = jQuery(this).closest("fieldset").attr('id');
+		let next = jQuery('#'+this.id).closest('fieldset').next('fieldset').attr('id');
+		jQuery('#'+next).show(300);
+		jQuery('#'+previous).hide(300);
+		setProgressBar(++form_count);
+
+  }); 
+  jQuery(".previous").click(function(){
+
+		let current = jQuery(this).closest("fieldset").attr('id');
+		let previous = jQuery('#'+this.id).closest('fieldset').prev('fieldset').attr('id');
+		jQuery('#'+previous).show(300);
+		jQuery('#'+current).hide(300);
+		setProgressBar(--form_count);
+
+  }); 
+});
+</script>

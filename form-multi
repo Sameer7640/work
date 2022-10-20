@@ -1,0 +1,83 @@
+<label class="label-cs">Hvilken type virksomhed?</label>
+[radio hvilken-type class:radio-btns use_label_element "B2B" "B2C"]
+
+[cf7mls_step navigation-btns "Next"]
+
+
+<label class="label-cs">Hvad sælger i?</label>
+[radio hvad-salger class:radio-btns use_label_element "Produkter" "Services"]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Hvilket markedsføringskanaler benytter i jer af i dag?</label>
+[radio benytter class:radio-btns use_label_element "Facebook" "Google" "SEO" "E-Mail" "Linkedin" "Radio" "Avis" "Ingen" ]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Hvad er de største udfordringer du står med i dag for at nå de målsætninger i ønsker i
+virksomheden?</label>
+[text* hvilken class:text-field]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Hvad ser du selv som de største muligheder for at skalere din forretning?</label>
+[checkbox markeds class:checkbox-btns use_label_element "Højere ROAS" "Mere trafik" "flere leads" "større ordrestørrelse" "mersalg til eksisterende kunder/klienter" "varmere leads" "højere konverteringsrate" "alle ovenover" ]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Hvor mange leads vil i have om måneden?</label>
+[text* mange-leads placeholder "1-250+"]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Hvad er din månedlig omsætning lige nu</label>
+[text* lige-nu placeholder "10,000-2,000,000"]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Hvad er din ønskede månedlige omsætning?</label>
+[text* hvad-er placeholder "20,000-5,000,000"]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Hvad beskriver dig bedst?</label>
+[radio beskriver class:bigradio-btns use_label_element "Jeg har økonomisk råderum til at investere i min forretning på nuværende
+tidspunkt" "Jeg har muligheden for at skabe økonomisk råderum til at investere i min forretning" "Jeg har ikke økonomisk råderum til at investere i min forretning endnu" ]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Hvad er ca. en kundes gennemsnitlige livstidsværdi for dig?</label>
+[text* gennemsnitlige placeholder "4,000-1,000,000"]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Hvad er jeres månedlige markedsføringsbudget på lige nu?</label>
+[radio manedlige class:radio-btns use_label_element "4.000-8.000" "8.000-16.000" "16.000-30.000" "30.000-50-000" "50.000+"]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">På en skala fra 1-10 hvor interesseret er du i at blive en samarbejdspartner?</label>
+[text* interesseret placeholder "1-10"]
+
+[cf7mls_step navigation-btns "Back" "Next"]
+
+
+<label class="label-cs">Your Contact Info</label>
+<div class="contact-info">
+[text* first-name placeholder "First Name"]
+[text* last-name placeholder "Last Name"]
+[email* email-address placeholder "Email Address"]
+[tel* phone-number placeholder "Phone Number"]
+</div>
+
+[submit "Submit"]

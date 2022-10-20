@@ -1,0 +1,116 @@
+
+
+ {% unless product.has_only_default_variant %}
+    <div class="product-form__controls-group">
+    {% for option in product.options_with_values %}
+    <div class="selector-wrapper js product-form__item">
+
+    {%if option.name == "Size"%}
+      <label>{{option.name}}</label>
+        {%assign index = forloop.index %}
+        <div class="variant-sizes">
+        {%for value in option.values%}
+        <input class="single-option-selector-{{ section.id }}" id="size-{{forloop.index}}" type="radio" name="size" value="{{ value | escape }}" data-index="option{{index}}" {% if option.selected_value == value %}checked{%endif%}/>
+        <label for="size-{{forloop.index}}">
+        {{value}}
+      </label>
+    {%endfor%}
+    </div>
+
+    {%else%}
+
+    {%if option.name == "Color"%}
+      <label>{{option.name}}</label>
+        {%assign index = forloop.index %}
+        <div class="variant-swatches">
+        {%for value in option.values%}
+        <input class="single-option-selector-{{ section.id }}" id="color-{{forloop.index}}" type="radio" name="color" value="{{ value | escape }}" data-index="option{{index}}" {% if option.selected_value == value %}checked{%endif%} {% if variant.inventory_quantity <= 0 and variant.available and variant.inventory_management != '' %} disabled {% endif %}/>
+        <label for="color-{{forloop.index}}">
+        <img src="{{value | escape | append:'.jpg' | strip | asset_url }}" alt="{{value}}"/>
+      </label>
+    {%endfor%}
+    </div>
+
+    {%else%}
+
+    <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
+      {{ option.name }}
+    </label>
+    <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input"
+        id="SingleOptionSelector-{{ forloop.index0 }}"
+        data-index="option{{ forloop.index }}">
+      {% for value in option.values %}
+        <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+      {% endfor %}
+    </select>
+
+    {%endif%}
+    {%endif%}
+
+    </div>
+    {% endfor %}
+    </div>
+
+    {% endunless %}
+
+
+
+
+    /* start product sizes swatch edits */
+.variant-sizes {
+    display: flex;
+}
+
+.variant-sizes input {
+    display: none;
+}
+
+.variant-sizes label {
+    max-height: 40px;
+    margin-right: 3%;
+}
+
+.variant-sizes label:last-child {
+    margin-right: 0%;
+}
+
+.variant-sizes img {
+    height: 36px;
+    width: 37px;
+}
+
+.variant-sizes input:checked + label {
+    border: 2px solid black;
+}
+
+/* end product sizes swatch edits */
+
+/* start product color swatch edits */
+
+.variant-swatches {
+    display: flex;
+}
+
+.variant-swatches input {
+    display: none;
+}
+
+.variant-swatches label {
+    max-height: 40px;
+    margin-right: 3%;
+}
+
+.variant-swatches label:last-child {
+    margin-right: 0%;
+}
+
+.variant-swatches img {
+    height: 36px;
+    width: 37px;
+}
+
+.variant-swatches input:checked + label {
+    border: 2px solid black;
+}
+
+/* end product color swatch edits */

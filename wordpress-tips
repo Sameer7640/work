@@ -71,3 +71,7 @@ return $tabs;
 function cs_custom_tab_content( $slug, $tab ) {
 echo '<p><strong>NUCCI Customs Washing Instructions: </strong></p><p>Your garment is handmade with love. Here are some washing tips to help preserve its originality:</p><ul><li>Turn inside out</li><li>Machine wash cold</li><li>Wash alone or with like colors</li><li>Do not use bleach</li><li>Do not put iron directly onto vinyl design</li><li>Tumble dry at low heat</li><li>Do not dry clean</li></ul>';
 }
+
+
+// update password using wp cli SSH
+wp user update admin --user_pass=(enter password here)

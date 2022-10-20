@@ -1,0 +1,46 @@
+/* GLOBAL STYLES */
+.site-content {
+	margin-bottom: 0px;
+}
+
+.woodmart-prefooter {
+	padding-bottom: 0px;
+}
+
+.main-page-wrapper {
+	padding-top: 0px;
+}
+
+@media (min-width: 1024px) {
+	.vc_row:not(.vc_row-no-padding):not(.vc_inner) {
+		margin-left: -30px;
+		margin-right: -30px;
+	}
+
+	.vc_row:not(.vc_row-no-padding):not(.vc_inner)>.vc_column_container>.vc_column-inner {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+.btn-primary {
+	padding: 15px 40px;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.full-width--image figure,
+.full-width--image figure div,
+.full-width--image figure img {
+	width: 100%;
+}
+
+/* HEADER CSS STARTS HERE */
+.woodmart-navigation ul.menu li.menu-item a {}
+
+.woodmart-navigation ul.menu li.current-menu-item.menu-item a {}
+
+.woodmart-navigation ul.menu li.menu-item a:hover,
+.woodmart-navigation ul.menu li.current-menu-item.menu-item a {}
+
+/* HOMEPAGE CSS STARTS HERE */
