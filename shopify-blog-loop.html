@@ -1,0 +1,107 @@
+<div class="page-width">
+  <div class="grid">
+    <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+      <div class="section-header text-center">
+        <h1>{{ page.title }}</h1>
+      </div>
+
+      <div class="rte">
+        {{ page.content }}
+        {% for article in blogs.news.articles limit:2 %}
+
+
+<!-- first image in blog post content -->
+        <a href="{{ article.url }}" class="text-colored">
+        
+                    <!-- if featured image display that -->
+                    {% if article.image %}
+                    <div class="hero-image-new"><img src="{{ article | img_url: 'large' }}"></div>
+                    
+                    {% else %}
+                    <!-- if no featured image then display first image from post -->
+                    
+                    {% assign hero_image = '' %}
+                    {% assign html_tags = article.excerpt_or_content | split: '<' %}
+                    {% for html_tag in html_tags %}
+                    {% assign img_check = html_tag | slice: 0,3 %}
+                    {% if img_check == 'img' %}
+                    {% assign img_tag = html_tag | split: '>' %}
+                    {% assign hero_image = '<' | append: img_tag.first | append: '>' %}
+                    {% break %}
+                    {% endif %}
+                    {% endfor %}
+                    
+                    {% if hero_image.size > 0 %}
+                    <div class="hero-image-new">{{ hero_image }}</div>
+                    {% endif %}          
+                    {% endif %}
+        </a>
+<!-- /first image in blog post content -->
+
+<!-- title -->
+<h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+
+<p>{{ article.content | strip_html | truncate: 300}}</p>
+
+
+
+
+{% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- COMPLETE PAGE FOR DEBUT THEME -->
+<div class="section-header text-center page-title" style="background-color: #E4EAEC;">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <div class="page-title-img">
+        <img src="https://cdn.shopify.com/s/files/1/0499/1995/1014/files/page-tittl.png?v=1604501287">
+    </div>
+  </div>
+</div>
+<div class="container">
+      <div class="rte-none">
+        {{ page.content }}
+        <div class="row blogs-row">
+            {% for article in blogs.news.articles limit:8 %}
+            <div class="col-md-4 blog-post">
+                <!-- first image in blog post content -->
+                      <a href="{{ article.url }}" class="text-colored hero-img-link">
+
+                        <!-- if featured image display that -->
+                        {% if article.image %}
+                        <div class="hero-img"><img src="{{ article | img_url: 'large' }}"></div>
+
+                        {% else %}
+                        <!-- if no featured image then display first image from post -->
+                            <img src="https://cdn.shopify.com/s/files/1/0499/1995/1014/files/450x320.png?v=1604502171">
+                        {% assign hero_image = '' %}
+                        {% assign html_tags = article.excerpt_or_content | split: '<' %}
+                        {% for html_tag in html_tags %}
+                        {% assign img_check = html_tag | slice: 0,3 %}
+                        {% if img_check == 'img' %}
+                        {% assign img_tag = html_tag | split: '>' %}
+                        {% assign hero_image = '<' | append: img_tag.first | append: '>' %}
+                        {% break %}
+                        {% endif %}
+                        {% endfor %}
+
+                        {% if hero_image.size > 0 %}
+                        <div class="hero-img">{{ hero_image }}</div>
+                        {% endif %}          
+                        {% endif %}
+                      </a>
+              <!-- /first image in blog post content -->
+              <!-- title -->
+              <h3 class="title-blog"><a href="{{ article.url }}">{{ article.title }}</a></h3>
+            </div>
+          {% endfor %}
+        </div>
+  </div>
+</div>
+
+

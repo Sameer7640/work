@@ -1,0 +1,57 @@
+<section class="blog-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-11 m-auto">
+				<h2 class="heading-prime darker">Blog</h2>
+				<div class="owl-carousel-three owl-carousel blogs-carousel">
+
+				{% for article in blogs.news.articles limit:8 %}
+					<div class="item">
+						<div class="blog-post">
+							<div class="blog-image">
+								<a href="{{ article.url }}" class="text-colored hero-img-link">
+					              <!-- if featured image display that -->
+					              {% if article.image %}
+					              <img src="{{ article | img_url: 'large' }}">
+
+					              {% else %}
+					              <!-- if no featured image then display first image from post -->
+									<img src="https://via.placeholder.com/480x350">
+					              {% assign hero_image = '' %}
+					              {% assign html_tags = article.excerpt_or_content | split: '<' %}
+					              {% for html_tag in html_tags %}
+					              {% assign img_check = html_tag | slice: 0,3 %}
+					              {% if img_check == 'img' %}
+					              {% assign img_tag = html_tag | split: '>' %}
+					              {% assign hero_image = '<' | append: img_tag.first | append: '>' %}
+					              {% break %}
+					              {% endif %}
+					              {% endfor %}
+
+					              {% if hero_image.size > 0 %}
+						              {{ hero_image }}
+					              {% endif %}          
+					              {% endif %}
+					            </a>
+							</div>
+							<div class="blog-text">
+								<h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+								<p><a href="{{ article.url }}">{{ article.excerpt_or_content | strip_html |  truncatewords: 25  }}</a></p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+
+
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="btn-wrap d-flex align-items-center justify-content-center py-md-4">
+					<a href="#" class="btn-secondary">Read More</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

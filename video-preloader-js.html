@@ -1,0 +1,61 @@
+<div class="preloader-vid" style="display: none;">
+    <button class="close-btn"></button>
+    <video width="100%" height="auto" autoplay playsinline muted preload="auto"
+        poster="https://eseospace.dev/websites/pivotpointsecurity/wp-content/uploads/2022/08/vid-poster.jpg">
+        <source src="https://eseospace.dev/websites/pivotpointsecurity/wp-content/uploads/2022/07/LogoAnimation.mp4"
+            type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<script>
+    jQuery(document).ready(function ($) {
+        $('.preloader-vid video').on('ended', function () {
+            jQuery('.preloader-vid').fadeOut();
+            jQuery('body').addClass('vid-ended');
+        });
+        jQuery('.preloader-vid').find('.close-btn').click(function () {
+            jQuery('.preloader-vid').hide();
+            jQuery('body').addClass('vid-ended');
+        })
+    });
+
+    function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function checkCookie() {
+        let user = getCookie("username");
+        if (user != "") {
+            jQuery('.preloader-vid').hide();
+            jQuery('body').addClass('vid-ended');
+            console.log("hello");
+        } else {
+            jQuery('.preloader-vid').show();
+            setCookie("username", "videoPlayed", 30);
+            console.log("Hello");
+            if (user != "" && user != null) {
+                console.log("Hello");
+            }
+        }
+    }
+    window.onload = checkCookie();
+</script>

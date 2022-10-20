@@ -1,0 +1,36 @@
+<ul class="row">
+	{% for product in collections.fall-collection.products limit: 6 %}
+	<li class="product-card col-md-4">
+		<div class="product">
+			{%- assign preview_image = product.featured_media.preview_image -%}
+			{%- assign img_url = preview_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+			<div class="product-image">
+				<a href="{{ product.url | within: collection }}"><img id="{{ img_id }}"
+                        class="grid-view-item__image lazyload"
+                        alt="{{ preview_image.alt }}"
+                        data-src="{{ img_url }}"
+                        data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                        data-aspectratio="{{ preview_image.aspect_ratio }}"
+                        data-sizes="auto"
+                        data-image>
+                </a>
+			</div>
+			<div class="product-content">
+				<h4 class="product-title"><a href="{{ product.url | within: collection }}">{{ product.title }}</a></h4>
+				{% include 'product-price-listing', product: product %}
+			</div>
+		</div>
+	</li>
+
+	<!-- ADD TO CART BUTTON -->
+	<form action="/cart/add" method="post">
+		{% if product.variants.size == 1 %}
+		<input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+		{% else %}
+		<select name="id">{% for variant in product.variants %}<option value="{{ variant.id }}">{{ variant.title }}</option>{% endfor %}</select>
+		{% endif %}
+		<div><button type="submit" name="add">Add to cart</button></div>  
+	</form>
+
+    {% endfor %}
+</ul>

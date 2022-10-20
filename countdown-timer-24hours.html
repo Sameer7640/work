@@ -1,0 +1,31 @@
+<div id="the-final-countdown">
+<div class="hours-wrap"><p class="hours"></p><span>Hours</span></div>
+<span class="dots">
+  <span></span>
+  <span></span>
+</span>
+<div class="minutes-wrap"><p class="minutes"></p><span>Minutes</span></div>
+<span class="dots">
+  <span></span>
+  <span></span>
+</span>
+<div class="seconds-wrap"><p class="seconds"></p><span>Seconds</span></div>
+</div>
+
+<script type="text/javascript">
+setInterval(function time(){
+  var d = new Date();
+  var hours = 24 - d.getHours();
+  var min = 60 - d.getMinutes();
+  if((min + '').length == 1){
+    min = '0' + min;
+  }
+  var sec = 60 - d.getSeconds();
+  if((sec + '').length == 1){
+        sec = '0' + sec;
+  }
+  jQuery('#the-final-countdown p.hours').html(hours);
+  jQuery('#the-final-countdown p.minutes').html(min);
+  jQuery('#the-final-countdown p.seconds').html(sec);
+}, 1000);
+</script>

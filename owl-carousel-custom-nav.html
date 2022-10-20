@@ -1,0 +1,60 @@
+<style type="text/css">
+.custom-nav {
+    display: flex;
+    align-items: center;
+}
+.custom-nav button {
+    background: none;
+    margin-bottom: 0px;
+}
+.custom-nav .owl-dots {
+    margin: 0px;
+}
+.custom-nav .owl-dots .owl-dot {
+    margin: 0px;
+    padding: 0px;
+    width: 100px;
+    height: 2px;
+    background: #E2E2E2;
+    cursor: pointer;
+}
+.custom-nav .owl-dots .owl-dot.active {
+    background: #FCB023;
+}
+</style>
+<div class="custom-nav owl-nav">
+    <button class="btn" id="prevBtn">Prev</button>
+    <ul id="carousel-custom-dots" class="owl-dots">
+        <li class="owl-dot"></li>
+        <li class="owl-dot"></li>
+        <li class="owl-dot"></li>
+    </ul>
+    <button class="btn" id="nextBtn">Next</button>
+</div>
+<script>
+jQuery(document).ready(function() {
+    var owl = jQuery('.testimonials .owl-carousel');
+    owl.owlCarousel({
+        dotsContainer: '#carousel-custom-dots',
+        loop:true,
+        margin:10,
+        items:1
+    });
+    jQuery('.owl-dot').click(function () {
+        owl.trigger('to.owl.carousel', [jQuery(this).index(), 300]);
+    });
+
+    // Assuming that owl is initiated already. OR we initiate here below.
+    // owl.owlCarousel();
+    // Go to the next item
+    jQuery('#nextBtn').click(function() {
+        owl.trigger('next.owl.carousel');
+    })
+    // Go to the previous item
+    jQuery('#prevBtn').click(function() {
+        // With optional speed parameter
+        // Parameters has to be in square bracket '[]'
+        owl.trigger('prev.owl.carousel', [300]);
+    })
+})
+</script>
